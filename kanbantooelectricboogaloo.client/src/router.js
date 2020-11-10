@@ -21,6 +21,7 @@ const routes = [
     name: 'Profile',
     component: loadPage('ProfilePage'),
     beforeEnter: authGuard
+    // utilized authoGuard for navigating to Boards page. Async useful for making sure only the user can get their boards
   }
 ]
 
