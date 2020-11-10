@@ -10,11 +10,20 @@ export class BoardsController extends BaseController {
       .use(Auth0Provider.getAuthorizedUserInfo)
       .get('', profilesService.getProfile)
       .get('', this.getUserBoards)
+      .post('', this.createBoard)
+  }
+
+  async createBoard(req, res, next) {
+    try {
+      res.send(await boardsService.createBoard(req.title))
+    } catch (error) {
+      next(error)
+    }
   }
 
   async getUserBoards(req, res, next) {
     try {
-      const boards = await boardsService.getUserBoards(req.userInfo.id)
+      const boards = await boardsService.getUserBoards()
       res.send(boards)
     } catch (error) {
       next(error)

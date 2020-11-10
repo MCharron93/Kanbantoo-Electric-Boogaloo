@@ -1,8 +1,12 @@
 import { dbContext } from '../db/DbContext'
 
 class BoardsService {
-  async getUserBoards(id) {
-    const boards = await dbContext.Boards.find(id)
+  async createBoard(boardTitle) {
+    return await dbContext.Boards.create(boardTitle)
+  }
+
+  async getUserBoards() {
+    const boards = await dbContext.Boards.find()
     return boards
   }
 }
