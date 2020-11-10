@@ -1,7 +1,9 @@
+import { dbContext } from '../db/DbContext'
+
 class ListsService {
-  createList(body) {
-    throw new Error('Method not implemented.')
+  async createList(list) {
+    return await dbContext.Lists.create(list)
   }
 }
 
-export const listService = new ListsService()
+export const listsService = new ListsService()
