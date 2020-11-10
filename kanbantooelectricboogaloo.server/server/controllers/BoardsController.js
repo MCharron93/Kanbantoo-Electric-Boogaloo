@@ -11,6 +11,16 @@ export class BoardsController extends BaseController {
       // .get('', profilesService.getProfile)
       .get('', this.getUserBoards)
       .post('', this.createBoard)
+      .delete('/:id', this.deleteBoard)
+  }
+
+  async deleteBoard(req, res, next) {
+    try {
+      // req.body.creatorId = req.userInfo.id
+      res.send(await boardsService.deleteBoard(req.params.id))
+    } catch (error) {
+      next(error)
+    }
   }
 
   async createBoard(req, res, next) {

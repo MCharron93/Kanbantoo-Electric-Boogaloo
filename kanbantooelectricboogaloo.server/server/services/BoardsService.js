@@ -1,6 +1,11 @@
 import { dbContext } from '../db/DbContext'
 
 class BoardsService {
+  async deleteBoard(id) {
+    const deletedBoard = await dbContext.Boards.findOneAndDelete(id)
+    return deletedBoard
+  }
+
   async createBoard(boardTitle) {
     return await dbContext.Boards.create(boardTitle)
   }
