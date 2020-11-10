@@ -5,8 +5,9 @@ import { AppState } from '../AppState'
 class BoardService {
   async getBoards() {
     try {
-      const res = await api.get('')
+      const res = await api.get('/boards')
       AppState.boards = res.data
+      console.log(res.data)
     } catch (error) {
       console.error(error)
     }

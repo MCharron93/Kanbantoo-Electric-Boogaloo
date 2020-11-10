@@ -7,7 +7,8 @@
 <script>
 export default {
   name: 'BoardComponent',
-  setup() {
+  props: ['boardProp'],
+  setup(props) {
     return {}
   },
   components: {}

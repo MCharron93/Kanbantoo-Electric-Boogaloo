@@ -20,7 +20,8 @@ export default {
   setup() {
     onMounted(() => boardService.getBoards())
     return {
-      profile: computed(() => AppState.profile)
+      profile: computed(() => AppState.profile),
+      boards: computed(() => AppState.boards)
     }
   }
 }
