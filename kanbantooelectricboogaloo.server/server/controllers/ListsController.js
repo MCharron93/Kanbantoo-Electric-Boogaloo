@@ -8,6 +8,15 @@ export class ListsController extends BaseController {
     this.router
       .use(Auth0Provider.getAuthorizedUserInfo)
       .post('', this.createList)
+      .delete('/:id', this.deleteList)
+  }
+
+  async deleteList(req, res, next) {
+    try {
+      res.send(await listsService.deleteList(req.params.id))
+    } catch (error) {
+      next(error)
+    }
   }
 
   async createList(req, res, next) {
