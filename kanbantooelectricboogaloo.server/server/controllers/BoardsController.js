@@ -5,7 +5,7 @@ import { boardsService } from '../services/BoardsService'
 
 export class BoardsController extends BaseController {
   constructor() {
-    super('boards')
+    super('/boards')
     this.router
       .use(Auth0Provider.getAuthorizedUserInfo)
       // .get('', profilesService.getProfile)
