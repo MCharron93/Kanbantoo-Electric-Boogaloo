@@ -6,8 +6,12 @@ class BoardsService {
   }
 
   async getUserBoards() {
-    const boards = await dbContext.Boards.find()
-    return boards
+    try {
+      const boards = await dbContext.Boards.find()
+      return boards
+    } catch (error) {
+      console.error(error)
+    }
   }
 }
 
