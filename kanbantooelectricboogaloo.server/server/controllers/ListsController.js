@@ -7,7 +7,6 @@ export class ListsController extends BaseController {
     super('/lists')
     this.router
       .use(Auth0Provider.getAuthorizedUserInfo)
-      .get('', this.getListsByBoard)
       .post('', this.createList)
   }
 
@@ -15,14 +14,6 @@ export class ListsController extends BaseController {
     try {
       req.body.creatorId = req.userInfo.id
       res.send(await listsService.createList(req.body))
-    } catch (error) {
-      next(error)
-    }
-  }
-
-  async getListsByBoard(req, res, next) {
-    try {
-      res.send(await listsService.getListsByBoard())
     } catch (error) {
       next(error)
     }

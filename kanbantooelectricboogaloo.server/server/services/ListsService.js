@@ -1,6 +1,10 @@
 import { dbContext } from '../db/DbContext'
 
 class ListsService {
+  async getListsByBoard(id) {
+    return await dbContext.Lists.find({ boardId: id })
+  }
+
   async createList(list) {
     return await dbContext.Lists.create(list)
   }
