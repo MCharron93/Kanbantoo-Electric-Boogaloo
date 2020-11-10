@@ -1,6 +1,9 @@
 <template>
-  <div class="board-component col-3 card shadow p-1 mb-2 bg-white text-center rounded align-items-center">
-    <h2>Board</h2>
+  <div class="board-component col-2 pt-3 card radius20 shadow text-center pb-2">
+    <h5 class="d-flex justify-content-between">
+      {{ boardProp.title }}
+      <i class="fas fa-ellipsis-h"></i>
+    </h5>
   </div>
 </template>
 

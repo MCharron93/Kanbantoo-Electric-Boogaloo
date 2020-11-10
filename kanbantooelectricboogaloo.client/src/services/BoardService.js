@@ -12,6 +12,15 @@ class BoardService {
       console.error(error)
     }
   }
+
+  async createBoard(newBoard) {
+    try {
+      const res = await api.post('/boards/', newBoard)
+      console.log(res.data)
+    } catch (error) {
+      console.error(error)
+    }
+  }
 }
 
 export const boardService = new BoardService()
