@@ -44,7 +44,8 @@ export class BoardsController extends BaseController {
 
   async getUserBoards(req, res, next) {
     try {
-      const boards = await boardsService.getUserBoards()
+      const creatorId = req.userInfo.id
+      const boards = await boardsService.getUserBoards(creatorId)
       res.send(boards)
     } catch (error) {
       next(error)

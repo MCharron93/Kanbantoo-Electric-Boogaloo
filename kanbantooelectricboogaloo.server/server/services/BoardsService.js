@@ -10,9 +10,9 @@ class BoardsService {
     return await dbContext.Boards.create(boardTitle)
   }
 
-  async getUserBoards() {
+  async getUserBoards(id) {
     try {
-      const boards = await dbContext.Boards.find()
+      const boards = await dbContext.Boards.find({ creatorId: id })
       return boards
     } catch (error) {
       console.error(error)
