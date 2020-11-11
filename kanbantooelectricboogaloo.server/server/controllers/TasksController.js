@@ -8,12 +8,17 @@ export class TasksController extends BaseController {
     this.router
       .use(Auth0Provider.getAuthorizedUserInfo)
       .post('', this.createTask)
-      .delete('/:id', this.deleteTask)
+      .put('/:taskId', this.moveTask)
+      .delete('/:taskId', this.deleteTask)
+  }
+
+  moveTask(req, res, next) {
+    throw new Error('Method not implemented.')
   }
 
   async deleteTask(req, res, next) {
     try {
-      res.send(await tasksService.deleteTask(req.params.id))
+      res.send(await tasksService.deleteTask(req.params.taskId))
     } catch (error) {
       next(error)
     }

@@ -1,9 +1,9 @@
 import { dbContext } from '../db/DbContext'
 
 class BoardsService {
-  // async getActiveBoard(id) {
-  //   const activeBoard = await dbContext.Boards.findById(b => b._id === id)
-  //   return activeBoard
+  // async changeBoardName(id, updatedInfo) {
+  //   const changedBoard = await dbContext.Boards.findByIdAndUpdate(id, updatedInfo)
+  //   return changedBoard
   // }
 
   async deleteBoard(id) {

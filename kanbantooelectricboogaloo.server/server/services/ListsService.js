@@ -1,6 +1,11 @@
 import { dbContext } from '../db/DbContext'
 
 class ListsService {
+  // async updateList(id, body) {
+  //   const updatedList = await dbContext.Lists.findByIdAndUpdate(id, body)
+  //   return updatedList
+  // }
+
   async deleteList(id) {
     const deletedList = await dbContext.Lists.findByIdAndDelete(id)
     return deletedList

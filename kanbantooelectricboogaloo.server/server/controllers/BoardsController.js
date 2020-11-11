@@ -14,12 +14,13 @@ export class BoardsController extends BaseController {
       .get('', this.getUserBoards)
       .get('/:boardId/lists', this.getListsByBoard)
       .post('', this.createBoard)
+      // .put('/:boardId', this.changeBoardName)
       .delete('/:id', this.deleteBoard)
   }
 
-  // async getActiveBoard(req, res, next) {
+  // async changeBoardName(req, res, next) {
   //   try {
-  //     res.send(await boardsService.getActiveBoard(req.params.boardId))
+  //     res.send(await boardsService.changeBoardName(req.params.id, req.body))
   //   } catch (error) {
   //     next(error)
   //   }

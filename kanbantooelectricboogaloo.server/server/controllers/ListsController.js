@@ -10,8 +10,17 @@ export class ListsController extends BaseController {
       .use(Auth0Provider.getAuthorizedUserInfo)
       .get('/:listId/tasks', this.getTasksByList)
       .post('', this.createList)
-      .delete('/:id', this.deleteList)
+      // .put('/:listId', this.updateList)
+      .delete('/:listId', this.deleteList)
   }
+
+  // async updateList(req, res, next) {
+  //   try {
+  //     res.send(await listsService.updateList(req.params.listId, req.body))
+  //   } catch (error) {
+  //     next(error)
+  //   }
+  // }
 
   // Consider moving over to board controller, make one call to the API to load tasks into AppState
   async getTasksByList(req, res, next) {
@@ -24,7 +33,7 @@ export class ListsController extends BaseController {
 
   async deleteList(req, res, next) {
     try {
-      res.send(await listsService.deleteList(req.params.id))
+      res.send(await listsService.deleteList(req.params.listId))
     } catch (error) {
       next(error)
     }
