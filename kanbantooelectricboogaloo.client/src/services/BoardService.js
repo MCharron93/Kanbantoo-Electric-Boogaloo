@@ -46,20 +46,34 @@ class BoardService {
   }
   // LIST FUNCTIONS
 
-  //   async getLists(boardId){
-  //     try {
-  //       const red = await api.get
-  //     } catch (error) {
+  async getLists(boardId) {
+    try {
+      const res = await api.get('/boards/' + boardId + '/lists')
+      AppState.activeBoardLists = res.data
+      console.log(res.data)
+    } catch (error) {
+      logger.error(error)
+    }
+  }
 
-  //     }
-  //   }
-  //   async createList(){
-  //     try {
+  async createList() {
+    try {
 
-  //     } catch (error) {
+    } catch (error) {
 
-//     }
-//   }
+    }
+  }
+
+  // TASK FUNCTIONS
+
+  async getTasks(listId) {
+    try {
+      const res = await api.get('/lists/' + listId + '/tasks')
+      logger.log(res.data)
+    } catch (error) {
+
+    }
+  }
 }
 
 export const boardService = new BoardService()
