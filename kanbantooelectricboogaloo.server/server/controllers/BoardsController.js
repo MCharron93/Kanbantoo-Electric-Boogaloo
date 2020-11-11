@@ -11,9 +11,18 @@ export class BoardsController extends BaseController {
       .use(Auth0Provider.getAuthorizedUserInfo)
       // .get('', profilesService.getProfile)
       .get('', this.getUserBoards)
+      .get('/:boardId', this.getActiveBoard)
       .get('/:boardId/lists', this.getListsByBoard)
       .post('', this.createBoard)
       .delete('/:id', this.deleteBoard)
+  }
+
+  async getActiveBoard(req, res, next) {
+    try {
+      res.send(await boardsService.getActiveBoard(req.params.boardId))
+    } catch (error) {
+      next(error)
+    }
   }
 
   async deleteBoard(req, res, next) {

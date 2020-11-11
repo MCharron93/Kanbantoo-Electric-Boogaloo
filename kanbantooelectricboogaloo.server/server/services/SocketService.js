@@ -35,6 +35,7 @@ class SocketService {
     }
   }
 
+  // NOTE Socket actions must match what is loaded in here.
   /**
    * @param {SocketIO.Socket} socket
    * @param {string} room
@@ -89,6 +90,7 @@ class SocketService {
     }
   }
 
+  // payload must match the action method within the client
   _onDispatch(socket) {
     return (payload = {}) => {
       try {
@@ -100,6 +102,8 @@ class SocketService {
       } catch (e) {}
     }
   }
+
+  // payload must match the action method within the client
 
   _newConnection(socket) {
     // Handshake / Confirmation of Connection
