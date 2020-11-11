@@ -69,9 +69,10 @@ class BoardService {
   async getTasks(listId) {
     try {
       const res = await api.get('/lists/' + listId + '/tasks')
-      logger.log(res.data)
+      AppState.tasks[listId] = res.data
+      console.log(res.data)
     } catch (error) {
-
+      logger.error(error)
     }
   }
 }
