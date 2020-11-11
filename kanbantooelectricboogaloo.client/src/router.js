@@ -1,6 +1,7 @@
 import { createRouter, createWebHashHistory } from 'vue-router'
 import { authGuard } from '@bcwdev/auth0provider-client'
-import ActiveBoard from './pages/ActiveBoardPage'
+// @ts-ignore
+import ActiveBoard from './pages/ActiveBoardPage.vue'
 
 function loadPage(page) {
   return () => import(`./pages/${page}.vue`)
