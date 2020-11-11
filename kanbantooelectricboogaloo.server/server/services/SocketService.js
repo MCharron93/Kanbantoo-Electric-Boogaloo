@@ -1,6 +1,9 @@
 import SocketIO from 'socket.io'
 import { Auth0Provider } from '@bcwdev/auth0provider'
 import { logger } from '../utils/Logger'
+
+// add client npm i socket.io-client
+
 class SocketService {
   io = SocketIO();
   /**
