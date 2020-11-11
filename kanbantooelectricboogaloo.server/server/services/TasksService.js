@@ -1,6 +1,10 @@
 import { dbContext } from '../db/DbContext'
 
 class TasksService {
+  async deleteTask(id) {
+    return await dbContext.Tasks.findByIdAndDelete(id)
+  }
+
   async getTasksbyList(id) {
     return await dbContext.Tasks.find({ listId: id })
   }

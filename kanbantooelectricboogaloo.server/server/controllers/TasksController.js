@@ -11,8 +11,12 @@ export class TasksController extends BaseController {
       .delete('/:id', this.deleteTask)
   }
 
-  deleteTask(arg0, deleteTask) {
-    throw new Error('Method not implemented.')
+  async deleteTask(req, res, next) {
+    try {
+      res.send(await tasksService.deleteTask(req.params.id))
+    } catch (error) {
+      next(error)
+    }
   }
 
   async createTask(req, res, next) {

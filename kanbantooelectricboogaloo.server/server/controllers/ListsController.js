@@ -13,6 +13,7 @@ export class ListsController extends BaseController {
       .delete('/:id', this.deleteList)
   }
 
+  // Consider moving over to board controller, make one call to the API to load tasks into AppState
   async getTasksByList(req, res, next) {
     try {
       res.send(await tasksService.getTasksbyList(req.params.listId))
