@@ -2,8 +2,7 @@
   <div class="activeboard-page container-fluid">
     <div class="row">
       <div class="col">
-        <h5>Active Board</h5>
-        {{ activeBoard }}
+        <h5>{{ activeBoard.title }}</h5>
       </div>
     </div>
   </div>
@@ -22,11 +21,14 @@ export default {
     const state = reactive({
 
     })
-    onMounted(() => {
-      boardService.showActiveBoard(route.params.boardId)
+    onMounted(async() => {
+      await boardService.getBoards()
+      await boardService.showActiveBoard(route.params.boardId)
     })
+
     return {
       state,
+      boards: computed(() => AppState.boards),
       activeBoard: computed(() => AppState.activeBoard)
     }
   },

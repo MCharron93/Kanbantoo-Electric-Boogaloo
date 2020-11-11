@@ -26,7 +26,7 @@ class BoardService {
   async removeBoard(boardId) {
     try {
       await api.delete('/boards/' + boardId)
-      AppState.boards = AppState.boards.filter(b => b.id !== boardId)
+      AppState.boards = AppState.boards.filter(b => b._id !== boardId)
     } catch (error) {
       logger.error(error)
     }
@@ -34,8 +34,9 @@ class BoardService {
 
   async showActiveBoard(boardId) {
     try {
-      const res = await api.get('/boards/' + boardId)
-      AppState.activeBoard = res.data
+      const newActiveBoard = AppState.boards.find(b => b._id === boardId)
+      // logger.log(newActiveBoard.title)
+      AppState.activeBoard = newActiveBoard
       console.log('hello active board')
     } catch (error) {
       logger.error(error)
