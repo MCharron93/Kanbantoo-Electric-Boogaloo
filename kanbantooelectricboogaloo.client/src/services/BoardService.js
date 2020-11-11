@@ -4,6 +4,7 @@ import { logger } from '../utils/Logger'
 // import router from '../router'
 
 class BoardService {
+  // BOARD FUNCTIONS
   async getBoards() {
     try {
       const res = await api.get('/boards')
@@ -26,7 +27,8 @@ class BoardService {
   async removeBoard(boardId) {
     try {
       await api.delete('/boards/' + boardId)
-      AppState.boards = AppState.boards.filter(b => b._id !== boardId)
+      this.getBoards()
+      // AppState.boards = AppState.boards.filter(b => b._id !== boardId)
     } catch (error) {
       logger.error(error)
     }
@@ -42,6 +44,22 @@ class BoardService {
       logger.error(error)
     }
   }
+  // LIST FUNCTIONS
+
+  //   async getLists(boardId){
+  //     try {
+  //       const red = await api.get
+  //     } catch (error) {
+
+  //     }
+  //   }
+  //   async createList(){
+  //     try {
+
+  //     } catch (error) {
+
+//     }
+//   }
 }
 
 export const boardService = new BoardService()

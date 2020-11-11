@@ -1,8 +1,15 @@
 <template>
   <div class="activeboard-page container-fluid">
     <div class="row">
-      <div class="col">
-        <h5>{{ activeBoard.title }}</h5>
+      <div class="col jumbotron jumbotron-fluid text-center">
+        <div class="container">
+          <h1 class="display-4">
+            {{ activeBoard.title }}
+          </h1>
+          <p class="lead">
+            Lorem, ipsum dolor sit amet consectetur adipisicing elit. Doloribus, sequi.
+          </p>
+        </div>
       </div>
     </div>
   </div>
