@@ -1,7 +1,10 @@
 <template>
-  <div class="list-component">
+  <div class="list-component col-2 pt-3 card radius20 shadow pb-2">
     <div>
-      <h2>{{ listProp.body }}</h2>
+      <h2 class="d-flex justify-content-between">
+        {{ listProp.body }}
+        <i class="fas fa-ellipsis-h"></i>
+      </h2>
       <!-- task component nested -->
       <task-component v-for="t in tasks" :key="t" :task-prop="t" />
     </div>

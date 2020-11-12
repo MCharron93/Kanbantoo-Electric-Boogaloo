@@ -1,7 +1,9 @@
 <template>
   <div class="task-component">
-    <p>{{ taskProp.body }}</p>
-    <!-- <p>task</p> -->
+    <p class="d-flex justify-content-between shadow radius20 py-1">
+      {{ taskProp.body }}
+      <i class="fas fa-arrow-right"></i>
+    </p>
   </div>
 </template>
 

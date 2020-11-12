@@ -11,9 +11,9 @@
           </p>
         </div>
       </div>
-      <div class="col-6">
-        <ListComponent v-for="l in lists" :key="l.body" :list-prop="l" />
-      </div>
+    </div>
+    <div class="row justify-content-around">
+      <ListComponent v-for="l in lists" :key="l.body" :list-prop="l" />
     </div>
   </div>
 </template>
