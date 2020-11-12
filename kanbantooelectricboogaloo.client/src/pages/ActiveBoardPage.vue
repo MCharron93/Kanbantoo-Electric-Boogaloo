@@ -40,7 +40,7 @@
         <div class="modal-body">
           <form @submit.prevent="createList" action="">
             <div class="col-8 offset-2 my-2">
-              <input type="text" placeholder="List Title" class="form-control">
+              <input type="text" placeholder="List Title" class="form-control" v-model="state.newList.body">
             </div>
             <div class="modal-footer">
               <button type="button" class="btn btn-secondary" data-dismiss="modal">
@@ -67,10 +67,15 @@ import ListComponent from '../components/ListComponent'
 export default {
   name: 'ActiveBoardPage',
   components: { ListComponent },
-  setup() {
+  props: {
+    boardProp: Object
+  },
+  setup(props) {
     const route = useRoute()
     const state = reactive({
-
+      newList: {
+        boardId: route.params.boardId
+      }
     })
     onMounted(async() => {
       await boardService.getBoards()
@@ -81,8 +86,12 @@ export default {
     return {
       state,
       activeBoard: computed(() => AppState.activeBoard),
-      lists: computed(() => AppState.activeBoardLists)
-
+      lists: computed(() => AppState.activeBoardLists),
+      comments: computed(() => AppState.comments),
+      createList() {
+        // state.newList.boardId = route.params.boardId
+        boardService.createList(state.newList)
+      }
     }
   }
 }

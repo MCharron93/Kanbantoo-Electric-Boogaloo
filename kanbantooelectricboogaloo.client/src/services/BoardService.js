@@ -56,11 +56,12 @@ class BoardService {
     }
   }
 
-  async createList() {
+  async createList(newList) {
     try {
-
+      await api.post('/lists/', newList)
+      this.getLists(newList.boardId)
     } catch (error) {
-
+      logger.error(error)
     }
   }
 
@@ -83,6 +84,16 @@ class BoardService {
       console.log(res.data)
     } catch (error) {
       logger.log(error)
+    }
+  }
+
+  // COMMENT FUNCTIONS
+
+  async getComments() {
+    try {
+
+    } catch (error) {
+
     }
   }
 }
