@@ -1,9 +1,16 @@
 <template>
-  <div class="task-component">
+  <div class="task-component dropdown">
     <p class="d-flex justify-content-between shadow radius20 py-1 align-items-center">
       {{ taskProp.body }}
-      <i class="fas fa-arrow-right mr-3"></i>
-    </p>
+      <button class="btn border-0 bg-transparent">
+        <i class="fas fa-arrow-right mr-3"></i>
+      </button>
+    </p><div class="dropdown-menu" aria-labelledby="dropdownMenuButton">
+      <a class="dropdown-item" href="#">Action</a>
+      <a class="dropdown-item" href="#">Another action</a>
+      <a class="dropdown-item" href="#">Something else here</a>
+    </div>
+
     <form class="form-group" @submit.prevent="createComment">
       <input class="form-control" type="text" placeholder="Enter Comment" v-model="state.newComment.body">
       <button class="btn btn-transparent text-success">

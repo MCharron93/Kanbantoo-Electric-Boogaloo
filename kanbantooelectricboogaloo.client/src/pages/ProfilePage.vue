@@ -46,7 +46,7 @@
       </div>
     </div>
     <div class="row justify-content-around text-center">
-      <board-component @click="showActiveBoard(b.id)" v-for="b in boards" :key="b.title" :board-prop="b" />
+      <board-component v-for="b in boards" :key="b.title" :board-prop="b" />
     </div>
   </div>
 </template>
