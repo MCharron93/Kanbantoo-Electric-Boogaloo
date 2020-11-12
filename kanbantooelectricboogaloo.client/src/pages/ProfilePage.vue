@@ -56,14 +56,13 @@ import { computed, onMounted, reactive } from 'vue'
 import { AppState } from '../AppState'
 import { boardService } from '../services/BoardService'
 import BoardComponent from '../components/BoardComponent'
-import { useRoute } from 'vue-router'
+// import { useRoute } from 'vue-router'
 import router from '../router'
 
 export default {
   name: 'Profile',
   components: { BoardComponent },
   setup() {
-    const route = useRoute()
     const state = reactive({
       newBoard: {}
     })
@@ -78,10 +77,6 @@ export default {
       createBoard() {
         boardService.createBoard(state.newBoard)
         console.log(state.newBoard.title)
-      },
-      removeBoard() {
-        boardService.removeBoard(route.params.boardId)
-        console.log('board removed')
       },
       showActiveBoard(id) {
         boardService.showActiveBoard(id)

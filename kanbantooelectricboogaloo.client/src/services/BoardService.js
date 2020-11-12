@@ -28,7 +28,6 @@ class BoardService {
     try {
       await api.delete('/boards/' + boardId)
       this.getBoards()
-      // AppState.boards = AppState.boards.filter(b => b._id !== boardId)
     } catch (error) {
       logger.error(error)
     }
