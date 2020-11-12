@@ -39,7 +39,7 @@ class BoardService {
       const newActiveBoard = AppState.boards.find(b => b._id === boardId)
       // logger.log(newActiveBoard.title)
       AppState.activeBoard = newActiveBoard
-      console.log('hello active board')
+      logger.log('hello active board')
     } catch (error) {
       logger.error(error)
     }
@@ -50,7 +50,7 @@ class BoardService {
     try {
       const res = await api.get('/boards/' + boardId + '/lists')
       AppState.activeBoardLists = res.data
-      console.log(res.data)
+      logger.log(res.data)
     } catch (error) {
       logger.error(error)
     }
@@ -70,9 +70,18 @@ class BoardService {
     try {
       const res = await api.get('/lists/' + listId + '/tasks')
       AppState.tasks[listId] = res.data
-      console.log(res.data)
+      logger.log(res.data)
     } catch (error) {
       logger.error(error)
+    }
+  }
+
+  async addTask(task) {
+    try {
+      const res = await api.post('/comments/', task)
+      AppState.comments.push(res.data)
+    } catch (error) {
+      logger.log(error)
     }
   }
 }

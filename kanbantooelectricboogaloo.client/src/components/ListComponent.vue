@@ -5,17 +5,26 @@
         {{ listProp.body }}
         <i class="fas fa-ellipsis-h"></i>
       </h2>
-      <!-- task component nested -->
+      <!-- TASK COMPONENT FOR DRAWING TASKS -->
       <task-component v-for="t in tasks" :key="t" :task-prop="t" />
     </div>
+    <!-- ADD TASK INPUT -->
+    <form class="form-group d-flex justify-content-center mt-2" @submit.prevent="addTask">
+      <button class="btn border-0 bg-transparent" type="submit">
+        <i class="fas fa-plus"></i>
+      </button>
+      <input class="border-0" type="text" name="task" placeholder="Add another task...">
+    </form>
   </div>
 </template>
 
 <script>
 import { AppState } from '../AppState'
-import { computed, onMounted } from 'vue'
+import { computed, onMounted, reactive } from 'vue'
 import { boardService } from '../services/BoardService'
 import { TaskComponent } from '../components/TaskComponent'
+import { useRoute } from 'vue-router'
+
 export default {
   name: 'ListComponent',
   props: {
@@ -23,13 +32,22 @@ export default {
   },
   components: { TaskComponent },
   setup(props) {
+    const route = useRoute()
+    const state = reactive({
+      newTask: {
+        list: route.params.boardId
+      }
+    })
     onMounted(async() => {
       await boardService.getTasks(props.listProp._id)
     })
     return {
       profile: computed(() => AppState.profile),
       lists: computed(() => props.listProp),
-      tasks: computed(() => AppState.tasks[props.listProp._id])
+      tasks: computed(() => AppState.tasks[props.listProp._id]),
+      addTask() {
+        boardService.addTask(state.newTasks)
+      }
     }
   }
 

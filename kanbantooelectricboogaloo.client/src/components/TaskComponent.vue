@@ -1,8 +1,8 @@
 <template>
   <div class="task-component">
-    <p class="d-flex justify-content-between shadow radius20 py-1">
+    <p class="d-flex justify-content-between shadow radius20 py-1 align-items-center">
       {{ taskProp.body }}
-      <i class="fas fa-arrow-right"></i>
+      <i class="fas fa-arrow-right mr-3"></i>
     </p>
   </div>
 </template>
