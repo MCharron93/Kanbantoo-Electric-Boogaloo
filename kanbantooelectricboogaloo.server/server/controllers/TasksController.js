@@ -1,15 +1,21 @@
 import { Auth0Provider } from '@bcwdev/auth0provider'
 import BaseController from '../utils/BaseController'
 import { tasksService } from '../services/TasksService'
+import { commentsService } from '../services/CommentsService'
 
 export class TasksController extends BaseController {
   constructor() {
     super('tasks')
     this.router
       .use(Auth0Provider.getAuthorizedUserInfo)
+      .get('/:taskId/comments', this.getCommentsByTask)
       .post('', this.createTask)
       .put('/:taskId', this.moveTask)
       .delete('/:taskId', this.deleteTask)
+  }
+
+  async getCommentsByTask(req, res, next) {
+    res.send(await commentServivce.getCommentsByTask())
   }
 
   async moveTask(req, res, next) {
