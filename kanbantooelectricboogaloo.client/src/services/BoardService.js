@@ -56,6 +56,16 @@ class BoardService {
     }
   }
 
+  async deleteList(listData) {
+    try {
+      debugger
+      await api.delete('/lists/' + listData._id)
+      this.getLists(listData.boardId)
+    } catch (error) {
+      logger.error(error)
+    }
+  }
+
   async createList(newList) {
     try {
       await api.post('/lists/', newList)

@@ -3,7 +3,7 @@
     <div>
       <h2 class="d-flex justify-content-between">
         {{ listProp.body }}
-        <i class="fas fa-ellipsis-h"></i>
+        <i class="fas fa-ellipsis-h" @click="deleteList"></i>
       </h2>
       <!-- TASK COMPONENT FOR DRAWING TASKS -->
       <task-component v-for="t in tasks" :key="t" :task-prop="t" />
@@ -48,6 +48,9 @@ export default {
       tasks: computed(() => AppState.tasks[props.listProp._id]),
       addTask() {
         boardService.addTask(state.newTask)
+      },
+      deleteList() {
+        boardService.deleteList(props.listProp)
       }
     }
   }
