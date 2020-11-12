@@ -1,14 +1,27 @@
 <template>
-  <div class="task-component dropdown">
-    <p class="d-flex justify-content-between shadow radius20 py-1 align-items-center">
+  <div class="task-component">
+    <!-- <p class="d-flex justify-content-between shadow radius20 py-1 align-items-center">
       {{ taskProp.body }}
-      <button class="btn border-0 bg-transparent">
+      <button class="btn border-0 bg-transparent" data-toggle="collapse">
         <i class="fas fa-arrow-right mr-3"></i>
       </button>
-    </p><div class="dropdown-menu" aria-labelledby="dropdownMenuButton">
-      <a class="dropdown-item" href="#">Action</a>
-      <a class="dropdown-item" href="#">Another action</a>
-      <a class="dropdown-item" href="#">Something else here</a>
+    </p> -->
+    <p class="d-flex justify-content-between shadow radius20 py-1 align-items-center">
+      {{ taskProp.body }}
+      <button class="btn btn-primary bg-transparent border-0 text-dark"
+              type="button"
+              data-toggle="collapse"
+              data-target="#collapseExample"
+              aria-expanded="false"
+              aria-controls="collapseExample"
+      >
+        <i class="fas fa-arrow-right mr-3"></i>
+      </button>
+    </p>
+    <div class="collapse" id="collapseExample">
+      <div class="card card-body">
+        Ay oh!
+      </div>
     </div>
 
     <form class="form-group" @submit.prevent="createComment">
