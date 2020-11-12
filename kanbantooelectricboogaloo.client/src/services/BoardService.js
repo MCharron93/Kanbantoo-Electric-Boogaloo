@@ -89,11 +89,23 @@ class BoardService {
 
   // COMMENT FUNCTIONS
 
-  async getComments() {
+  async getComments(taskId) {
     try {
-
+      const res = await api.get('/tasks/' + taskId + '/comments')
+      AppState.comments[taskId] = res.data
+      console.log(res.data)
     } catch (error) {
+      logger.error(error)
+    }
+  }
 
+  async createComment(newComment) {
+    try {
+      await api.post('/comments/', newComment)
+      this.getComments(newComment.taskId)
+      console.log(newComment)
+    } catch (error) {
+      logger.log(error)
     }
   }
 }
