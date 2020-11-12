@@ -2,7 +2,7 @@
   <div class="task-component">
     <p class="d-flex justify-content-between shadow radius20 py-1 align-items-center">
       {{ taskProp.body }}
-      <i class="fas fa-arrow-right mr-3"></i>
+      <i class="fas fa-arrow-right mr-3" @click="moveTask"></i>
     </p>
     <form class="form-group" @submit.prevent="createComment">
       <input class="form-control" type="text" placeholder="Enter Comment" v-model="state.newComment.body">
@@ -42,6 +42,9 @@ export default {
       comments: computed(() => AppState.comments[props.taskProp._id]),
       createComment() {
         boardService.createComment(state.newComment)
+      },
+      moveTask() {
+        boardService.moveTask(props.taskProp)
       }
     }
   }

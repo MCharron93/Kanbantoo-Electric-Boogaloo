@@ -97,6 +97,16 @@ class BoardService {
     }
   }
 
+  async moveTask(taskProps) {
+    try {
+      debugger
+      const res = await api.put('tasks' + taskProps._id, taskProps)
+      AppState.tasks = res.data
+    } catch (error) {
+      logger.error(error)
+    }
+  }
+
   // COMMENT FUNCTIONS
 
   async getComments(taskId) {
