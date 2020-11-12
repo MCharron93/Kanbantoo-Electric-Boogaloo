@@ -10,14 +10,23 @@
 </template>
 
 <script>
-import { } from 'vue'
+import { reactive } from 'vue'
+import { boardService } from '../services/BoardService'
 export default {
   name: 'BoardComponent',
-  props: ['boardProp'],
+  props: {
+    boardProp: Object
+  },
   components: {},
   setup(props) {
-    return {
+    const state = reactive({
 
+    })
+    return {
+      state,
+      removeBoard() {
+        boardService.removeBoard(props.boardProp._id)
+      }
     }
   }
 
