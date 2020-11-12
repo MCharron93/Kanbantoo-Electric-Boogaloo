@@ -38,7 +38,7 @@
           </button>
         </div>
         <div class="modal-body">
-          <form @submit.prevent="createList" action="">
+          <form @submit.prevent="createList">
             <div class="col-8 offset-2 my-2">
               <input type="text" placeholder="List Title" class="form-control" v-model="state.newList.body">
             </div>
