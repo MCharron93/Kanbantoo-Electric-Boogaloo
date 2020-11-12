@@ -1,6 +1,6 @@
 <template>
   <div class="comment-component">
-    <h5>{{ commentProp.body }}</h5>
+    <h5>{{ commentProp.body }}</h5><span>&times;</span>
   </div>
 </template>
 
