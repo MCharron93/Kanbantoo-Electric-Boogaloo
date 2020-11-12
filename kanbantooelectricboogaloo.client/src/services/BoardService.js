@@ -55,6 +55,16 @@ class BoardService {
     }
   }
 
+  async deleteList(listData) {
+    try {
+      debugger
+      await api.delete('/lists/' + listData._id)
+      this.getLists(listData.boardId)
+    } catch (error) {
+      logger.error(error)
+    }
+  }
+
   async createList(newList) {
     try {
       await api.post('/lists/', newList)
@@ -83,6 +93,16 @@ class BoardService {
       console.log(res.data)
     } catch (error) {
       logger.log(error)
+    }
+  }
+
+  async moveTask(taskProps) {
+    try {
+      debugger
+      const res = await api.put('tasks' + taskProps._id, taskProps)
+      AppState.tasks = res.data
+    } catch (error) {
+      logger.error(error)
     }
   }
 
