@@ -110,10 +110,9 @@ class BoardService {
 
   async getComments(taskId) {
     try {
-      debugger
       const res = await api.get('/tasks/' + taskId + '/comments')
       AppState.comments[taskId] = res.data
-      console.log(res.data)
+      // console.log(res.data)
     } catch (error) {
       logger.error(error)
     }
