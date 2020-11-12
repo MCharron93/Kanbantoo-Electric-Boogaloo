@@ -126,6 +126,15 @@ class BoardService {
       logger.log(error)
     }
   }
+
+  async deleteComment(commentData) {
+    try {
+      await api.delete('/comments/' + commentData._id)
+      this.getComments(commentData.taskId)
+    } catch (error) {
+      logger.error(error)
+    }
+  }
 }
 
 export const boardService = new BoardService()
