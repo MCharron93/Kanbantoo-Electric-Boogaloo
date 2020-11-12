@@ -100,8 +100,8 @@ class BoardService {
   async moveTask(taskProps) {
     try {
       debugger
-      const res = await api.put('tasks' + taskProps._id, taskProps)
-      AppState.tasks = res.data
+      await api.put('tasks' + taskProps._id, taskProps)
+      this.getLists(taskProps.listId)
     } catch (error) {
       logger.error(error)
     }
