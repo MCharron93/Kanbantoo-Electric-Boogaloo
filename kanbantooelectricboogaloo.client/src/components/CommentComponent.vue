@@ -1,17 +1,18 @@
 <template>
-  <div class="comments-component">
-    <h5>{{ commentProp }}</h5>
+  <div class="comment-component">
+    <h5>{{ commentProp.body }}</h5>
   </div>
 </template>
 
 <script>
 export default {
-  name: 'CommentsComponent',
+  name: 'CommentComponent',
   props: {
     commentProp: Object
   },
   setup(props) {
-    return {}
+    return {
+    }
   },
   components: {}
 }

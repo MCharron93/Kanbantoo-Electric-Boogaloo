@@ -9,7 +9,7 @@ class BoardService {
     try {
       const res = await api.get('/boards')
       AppState.boards = res.data
-      console.log(res.data)
+      // console.log(res.data)
     } catch (error) {
       logger.error(error)
     }
@@ -17,8 +17,8 @@ class BoardService {
 
   async createBoard(newBoard) {
     try {
-      const res = await api.post('/boards/', newBoard)
-      console.log(res.data)
+      await api.post('/boards/', newBoard)
+      // console.log(res.data)
     } catch (error) {
       logger.error(error)
     }
@@ -38,7 +38,7 @@ class BoardService {
       const newActiveBoard = AppState.boards.find(b => b._id === boardId)
       // logger.log(newActiveBoard.title)
       AppState.activeBoard = newActiveBoard
-      logger.log('hello active board')
+      // logger.log('hello active board')
     } catch (error) {
       logger.error(error)
     }
@@ -49,7 +49,7 @@ class BoardService {
     try {
       const res = await api.get('/boards/' + boardId + '/lists')
       AppState.activeBoardLists = res.data
-      logger.log(res.data)
+      // logger.log(res.data)
     } catch (error) {
       logger.error(error)
     }
@@ -80,7 +80,7 @@ class BoardService {
     try {
       const res = await api.get('/lists/' + listId + '/tasks')
       AppState.tasks[listId] = res.data
-      logger.log(res.data)
+      // logger.log(res.data)
     } catch (error) {
       logger.error(error)
     }
@@ -88,9 +88,9 @@ class BoardService {
 
   async addTask(task) {
     try {
-      const res = await api.post('/tasks/', task)
+      await api.post('/tasks/', task)
       this.getTasks(task.listId)
-      console.log(res.data)
+      // console.log(res.data)
     } catch (error) {
       logger.log(error)
     }
@@ -110,6 +110,7 @@ class BoardService {
 
   async getComments(taskId) {
     try {
+      debugger
       const res = await api.get('/tasks/' + taskId + '/comments')
       AppState.comments[taskId] = res.data
       console.log(res.data)
@@ -122,7 +123,7 @@ class BoardService {
     try {
       await api.post('/comments/', newComment)
       this.getComments(newComment.taskId)
-      console.log(newComment)
+      // console.log(newComment)
     } catch (error) {
       logger.log(error)
     }
