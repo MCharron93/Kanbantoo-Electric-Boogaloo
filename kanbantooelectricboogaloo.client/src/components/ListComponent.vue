@@ -13,7 +13,7 @@
       <button class="btn border-0 bg-transparent" type="submit">
         <i class="fas fa-plus"></i>
       </button>
-      <input class="border-0" type="text" name="task" placeholder="Add another task...">
+      <input class="border-0" type="text" name="task" placeholder="Add another task..." v-model="state.newTask.body">
     </form>
   </div>
 </template>
@@ -23,7 +23,7 @@ import { AppState } from '../AppState'
 import { computed, onMounted, reactive } from 'vue'
 import { boardService } from '../services/BoardService'
 import { TaskComponent } from '../components/TaskComponent'
-import { useRoute } from 'vue-router'
+// import { useRoute } from 'vue-router'
 
 export default {
   name: 'ListComponent',
@@ -32,21 +32,22 @@ export default {
   },
   components: { TaskComponent },
   setup(props) {
-    const route = useRoute()
+    // const route = useRoute()
     const state = reactive({
       newTask: {
-        list: route.params.boardId
+        listId: props.listProp._id
       }
     })
     onMounted(async() => {
       await boardService.getTasks(props.listProp._id)
     })
     return {
+      state,
       profile: computed(() => AppState.profile),
       lists: computed(() => props.listProp),
       tasks: computed(() => AppState.tasks[props.listProp._id]),
       addTask() {
-        boardService.addTask(state.newTasks)
+        boardService.addTask(state.newTask)
       }
     }
   }

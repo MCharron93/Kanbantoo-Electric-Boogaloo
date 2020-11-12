@@ -78,8 +78,9 @@ class BoardService {
 
   async addTask(task) {
     try {
-      const res = await api.post('/comments/', task)
-      AppState.comments.push(res.data)
+      const res = await api.post('/tasks/', task)
+      this.getTasks(task.listId)
+      console.log(res.data)
     } catch (error) {
       logger.log(error)
     }

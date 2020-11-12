@@ -81,7 +81,7 @@ export default {
     return {
       state,
       activeBoard: computed(() => AppState.activeBoard),
-      lists: computed(() => AppState.activeBoardLists).value
+      lists: computed(() => AppState.activeBoardLists)
 
     }
   }

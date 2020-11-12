@@ -75,7 +75,7 @@ export default {
       state,
       profile: computed(() => AppState.profile),
       boards: computed(() => AppState.boards),
-      createBoard(newBoard) {
+      createBoard() {
         boardService.createBoard(state.newBoard)
         console.log(state.newBoard.title)
       },
