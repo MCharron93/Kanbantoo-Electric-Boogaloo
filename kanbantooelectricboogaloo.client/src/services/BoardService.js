@@ -19,6 +19,7 @@ class BoardService {
     try {
       await api.post('/boards/', newBoard)
       // console.log(res.data)
+      this.getBoards()
     } catch (error) {
       logger.error(error)
     }

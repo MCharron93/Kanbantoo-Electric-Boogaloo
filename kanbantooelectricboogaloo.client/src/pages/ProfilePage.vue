@@ -54,7 +54,7 @@
         </div>
       </div>
     </div>
-    <div class="row p-5 justify-content-around text-center">
+    <div class="row p-5 justify-content-even flex-wrap text-center">
       <board-component v-for="b in boards" :key="b.title" :board-prop="b" />
     </div>
   </div>
