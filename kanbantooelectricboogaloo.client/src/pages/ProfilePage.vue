@@ -10,13 +10,13 @@
           <p class="p-2">
             {{ profile.email }}
           </p>
+          <div class="p-3">
+            <button type="button" class="btn btn-primary border-0 background-none" data-toggle="modal" data-target="#boardModal">
+              Add a board
+            </button>
+          </div>
         </div>
         <!-- MODAL FOR ADDING BOARD -->
-        <div class="p-3">
-          <button type="button" class="btn btn-primary border-0 background-none" data-toggle="modal" data-target="#boardModal">
-            Add a board
-          </button>
-        </div>
       </div>
     </div>
     <div class="modal fade"
