@@ -5,14 +5,14 @@
       <button class="btn bg-transparent border-0 text-dark"
               type="button"
               data-toggle="collapse"
-              data-target="#collapseExample"
+              :data-target="'#collapseExp' + taskProp._id"
               aria-expanded="false"
               aria-controls="collapseExample"
       >
         <i class="fas fa-arrow-right mr-3"></i>
       </button>
     </p>
-    <div class="collapse" id="collapseExample">
+    <div class="collapse" :id="'collapseExp' + taskProp._id">
       <div id="accordion">
         <div class="row justify-content-around">
           <div class="col-3">
@@ -33,7 +33,7 @@
 
           <div class="col-3">
             <div id="headingThree">
-              <button class="btn btn-link" data-toggle="collapse" data-target="#collapseOne" aria-expanded="true" aria-controls="collapseOne">
+              <button class="btn btn-link" data-toggle="collapse" data-target="#collapse" aria-expanded="true" aria-controls="collapseOne">
                 <i class="fas fa-share"></i>
               </button>
             </div>
