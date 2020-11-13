@@ -10,7 +10,7 @@
             Welcome to your board!
           </p>
           <button type="button" class="btn btn-primary border-0 background-none" data-toggle="modal" data-target="#listModal">
-            Create List
+            Create List <i class="fas fa-list-alt fa-lg ml-2"></i>
           </button>
         </div>
       </div>
@@ -30,9 +30,9 @@
     <div class="modal-dialog" role="document">
       <div class="modal-content">
         <div class="modal-header">
-          <h5 class="modal-title" id="listModalLabel">
+          <h3 class="modal-title" id="listModalLabel">
             List Title
-          </h5>
+          </h3>
           <button type="button" class="close" data-dismiss="modal" aria-label="Close">
             <span aria-hidden="true">&times;</span>
           </button>
@@ -40,14 +40,14 @@
         <div class="modal-body">
           <form @submit.prevent="createList">
             <div class="col-8 offset-2 my-2">
-              <input type="text" placeholder="List Title" class="form-control" v-model="state.newList.body">
+              <input type="text" placeholder="List name" class="form-control" v-model="state.newList.body">
             </div>
             <div class="modal-footer">
-              <button type="button" class="btn btn-secondary" data-dismiss="modal">
-                Close
+              <button type="button" class="btn border-0 bg-transparent" data-dismiss="modal">
+                Close    <i class="fas fa-window-close fa-lg ml-2"></i>
               </button>
-              <button type="submit" class="btn btn-primary">
-                Create List
+              <button type="submit" class="btn border-0 bg-transparent">
+                Create List <i class="fas fa-clipboard-list fa-lg ml-2"></i>
               </button>
             </div>
           </form>
