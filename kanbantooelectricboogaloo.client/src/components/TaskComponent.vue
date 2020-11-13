@@ -24,13 +24,12 @@
         <div id="v-model-select" class="demo">
           <select @change.prevent="moveTask" v-model="state.selected">
             <option disabled value="">
-              Please select one
+              Move lists...
             </option>
             <option class="text-light" v-for="l in lists" :key="l" :value="l._id">
               {{ l.body }}
             </option>
           </select>
-          <span>Selected: {{ state.selected }}</span>
         </div>
       </div>
     </div>
