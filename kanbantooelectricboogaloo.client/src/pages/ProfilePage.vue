@@ -1,7 +1,7 @@
 <template>
   <div class="about text-center container-fluid">
     <div class="row justify-content-center p-3">
-      <div class="card radius50 col-6">
+      <div class="card radius50 col-6 shadow">
         <h1 class="p-4">
           Welcome {{ profile.name }}
         </h1>
