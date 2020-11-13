@@ -37,7 +37,7 @@
             <div id="headingTwo">
               <h5 class="mb-0">
                 <button class="btn btn-link collapsed text-dark" data-toggle="collapse" data-target="#collapseTwo" aria-expanded="false" aria-controls="collapseTwo">
-                  <i class="fas fa-trash-alt"></i>
+                  <i class="fas fa-trash-alt" @click="deleteTask"></i>
                 </button>
               </h5>
             </div>
@@ -116,6 +116,9 @@ export default {
       },
       moveTask() {
         boardService.moveTask(state.selected, props.taskProp)
+      },
+      deleteTask() {
+        boardService.deleteTask(props.taskProp)
       }
     }
   }

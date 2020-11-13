@@ -107,6 +107,15 @@ class BoardService {
     }
   }
 
+  async deleteTask(taskData) {
+    try {
+      await api.delete('/tasks/' + taskData._id)
+      this.getTasks(taskData.listId)
+    } catch (error) {
+      logger.error(error)
+    }
+  }
+
   // COMMENT FUNCTIONS
 
   async getComments(taskId) {

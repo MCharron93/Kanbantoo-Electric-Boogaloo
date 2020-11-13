@@ -1,0 +1,12 @@
+{
+  "name": "kanbantooelectricboogaloo",
+  "version": "1.0.0",
+  "scripts": {
+    "setup": "npm run setup:client && npm run setup:server",
+    "setup:client": "cd kanbantooelectricboogaloo.client && npm i",
+    "setup:server": "cd kanbantooelectricboogaloo.server && npm i"
+  },
+  "dependencies": {
+    "axios": "^0.21.0"
+  }
+}
