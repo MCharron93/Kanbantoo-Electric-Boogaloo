@@ -95,10 +95,13 @@ class BoardService {
     }
   }
 
-  async moveTask(taskProps) {
+  async moveTask(listId, taskProps) {
     try {
-      await api.put('tasks' + taskProps._id, taskProps)
-      this.getLists(taskProps.listId)
+      const oldListId = taskProps.listId
+      taskProps.listId = listId
+      await api.put('tasks/' + taskProps._id, taskProps)
+      this.getTasks(taskProps.listId)
+      this.getTasks(oldListId)
     } catch (error) {
       logger.error(error)
     }
