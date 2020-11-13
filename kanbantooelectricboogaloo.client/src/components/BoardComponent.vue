@@ -22,7 +22,6 @@ export default {
   components: {},
   setup(props) {
     const state = reactive({
-
     })
     return {
       state,
