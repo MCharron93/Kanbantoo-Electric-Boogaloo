@@ -1,15 +1,24 @@
 <template>
-  <div class="about text-center justify-content-center container-fluid">
-    <h1>Welcome {{ profile.name }}</h1>
-    <img class="rounded radius50" :src="profile.picture" alt="" />
-    <p>{{ profile.email }}</p>
-
-    <!-- MODAL FOR ADDING BOARD -->
-
-    <button type="button" class="btn btn-primary border-0 background-none" data-toggle="modal" data-target="#boardModal">
-      Add a board
-    </button>
-
+  <div class="about text-center container-fluid">
+    <div class="row justify-content-center p-3">
+      <div class="card radius50 col-6">
+        <h1 class="p-4">
+          Welcome {{ profile.name }}
+        </h1>
+        <div class="p-3">
+          <img class="rounded radius50" :src="profile.picture" alt="" />
+          <p class="p-2">
+            {{ profile.email }}
+          </p>
+          <div class="p-3">
+            <button type="button" class="btn btn-primary border-0 background-none" data-toggle="modal" data-target="#boardModal">
+              Add a board
+            </button>
+          </div>
+        </div>
+        <!-- MODAL FOR ADDING BOARD -->
+      </div>
+    </div>
     <div class="modal fade"
          id="boardModal"
          tabindex="-1"
@@ -45,7 +54,7 @@
         </div>
       </div>
     </div>
-    <div class="row justify-content-around text-center">
+    <div class="row p-5 justify-content-around text-center">
       <board-component v-for="b in boards" :key="b.title" :board-prop="b" />
     </div>
   </div>

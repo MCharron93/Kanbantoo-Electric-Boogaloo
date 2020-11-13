@@ -1,5 +1,5 @@
 <template>
-  <div class="board-component col-2 pt-3 card radius20 shadow text-center pb-1">
+  <div class="board-component col-3 pt-3 card radius20 shadow text-center pb-1">
     <div class="d-flex justify-content-between">
       <router-link :to="{name: 'ActiveBoardPage', params: {boardId: boardProp._id}}">
         <h2>{{ boardProp.title }}</h2>
