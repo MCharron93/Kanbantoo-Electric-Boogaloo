@@ -7,7 +7,7 @@
             {{ activeBoard.title }}
           </h3>
           <p class="lead">
-            Lorem, ipsum dolor sit amet consectetur adipisicing elit. Doloribus, sequi.
+            Welcome to your board!
           </p>
           <button type="button" class="btn btn-primary border-0 background-none" data-toggle="modal" data-target="#listModal">
             Create List

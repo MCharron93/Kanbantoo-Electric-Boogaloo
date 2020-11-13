@@ -13,23 +13,69 @@
       </button>
     </p>
     <div class="collapse" id="collapseExample">
-      <div class="card card-body">
+      <div id="accordion">
+        <div class="row justify-content-around">
+          <div class="col-3">
+            <div id="headingOne">
+              <h5 class="mb-0">
+                <button class="btn btn-link text-success" data-toggle="collapse" data-target="#collapseOne" aria-expanded="true" aria-controls="collapseOne">
+                  <i class="fas fa-comment"></i>
+                </button>
+              </h5>
+            </div>
+
+            <!-- <div id="collapseOne" class="collapse show" aria-labelledby="headingOne" data-parent="#accordion">
+                <div class="card-body">
+                  <form class="form-group" @submit.prevent="createComment">
+                    <input class="form-control" type="text" placeholder="Enter Comment" v-model="state.newComment.body">
+                  </form>
+                </div>
+              </div> -->
+          </div>
+
+          <div class="col-3">
+            <div id="headingTwo">
+              <h5 class="mb-0">
+                <button class="btn btn-link collapsed text-dark" data-toggle="collapse" data-target="#collapseTwo" aria-expanded="false" aria-controls="collapseTwo">
+                  <i class="fas fa-trash-alt"></i>
+                </button>
+              </h5>
+            </div>
+          </div>
+
+          <div class="col-3">
+            <div id="headingOne">
+              <h5 class="mb-0">
+                <button class="btn btn-link" data-toggle="collapse" data-target="#collapseOne" aria-expanded="true" aria-controls="collapseOne">
+                  <i class="fas fa-share"></i>
+                </button>
+              </h5>
+            </div>
+
+            <div id="collapseOne" class="collapse show" aria-labelledby="headingOne" data-parent="#accordion">
+              <div class="card-body">
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+      <div id="v-model-select" class="row justify-content-center">
+        <select @change.prevent="moveTask" v-model="state.selected">
+          <option disabled value="">
+            Move lists...
+          </option>
+          <option class="text-light" v-for="l in lists" :key="l" :value="l._id">
+            {{ l.body }}
+          </option>
+        </select>
+      </div>
+      <div class="col-12">
+        <!-- Comment Component -->
         <comment-component v-for="c in comments" :key="c" :comment-prop="c" />
-        <form class="form-group" @submit.prevent="createComment">
-          <input class="form-control" type="text" placeholder="Enter Comment" v-model="state.newComment.body">
-          <button class="btn btn-transparent text-success">
-            <i class="fas fa-comment"></i>
-          </button>
-        </form>
-        <div id="v-model-select" class="demo">
-          <select @change.prevent="moveTask" v-model="state.selected">
-            <option disabled value="">
-              Move lists...
-            </option>
-            <option class="text-light" v-for="l in lists" :key="l" :value="l._id">
-              {{ l.body }}
-            </option>
-          </select>
+        <div id="collapseOne" class="collapse show" aria-labelledby="headingOne" data-parent="#accordion">
+          <form class="form-group" @submit.prevent="createComment">
+            <input class="form-control" type="text" placeholder="Enter Comment" v-model="state.newComment.body">
+          </form>
         </div>
       </div>
     </div>
