@@ -54,7 +54,7 @@
         </div>
       </div>
     </div>
-    <div class="row p-5 justify-content-even flex-wrap text-center">
+    <div class="row p-5 justify-content-between flex-wrap text-center">
       <board-component v-for="b in boards" :key="b.title" :board-prop="b" />
     </div>
   </div>
@@ -89,7 +89,7 @@ export default {
       },
       showActiveBoard(id) {
         boardService.showActiveBoard(id)
-        console.log('trying to show board')
+        // console.log('trying to show board')
         router.push({ name: 'ActiveBoardPage', params: { boardId: id } })
       }
     }
