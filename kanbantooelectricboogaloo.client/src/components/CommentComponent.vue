@@ -1,9 +1,9 @@
 <template>
   <div class="comment-component">
     <div class="col-12 d-flex justify-content-between">
-      <h5>
+      <h6>
         {{ commentProp.body }}
-      </h5>
+      </h6>
       <span class="deleteX" @click="deleteComment">&times;</span>
     </div>
   </div>

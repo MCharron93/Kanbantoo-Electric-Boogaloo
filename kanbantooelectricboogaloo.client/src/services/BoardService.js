@@ -97,7 +97,6 @@ class BoardService {
 
   async moveTask(taskProps) {
     try {
-      debugger
       await api.put('tasks' + taskProps._id, taskProps)
       this.getLists(taskProps.listId)
     } catch (error) {

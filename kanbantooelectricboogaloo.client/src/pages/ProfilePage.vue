@@ -58,6 +58,7 @@ import { boardService } from '../services/BoardService'
 import BoardComponent from '../components/BoardComponent'
 // import { useRoute } from 'vue-router'
 import router from '../router'
+import { profileService } from '../services/ProfileService'
 
 export default {
   name: 'Profile',
@@ -66,10 +67,10 @@ export default {
     const state = reactive({
       newBoard: {}
     })
-    onMounted(() => boardService.getBoards())
-    // onMounted(() => {
-    //   boardService.showActiveBoard(route.params.boardId)
-    // })
+    onMounted(() => {
+      profileService.getProfile()
+      boardService.getBoards()
+    })
     return {
       state,
       profile: computed(() => AppState.profile),
