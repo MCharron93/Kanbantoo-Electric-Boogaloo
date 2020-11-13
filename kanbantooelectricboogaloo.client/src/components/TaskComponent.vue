@@ -17,42 +17,28 @@
         <div class="row justify-content-around">
           <div class="col-3">
             <div id="headingOne">
-              <h5 class="mb-0">
-                <button class="btn btn-link text-success" data-toggle="collapse" data-target="#collapseOne" aria-expanded="true" aria-controls="collapseOne">
-                  <i class="fas fa-comment"></i>
-                </button>
-              </h5>
+              <button class="btn btn-link text-success" data-toggle="collapse" data-target="#collapseOne" aria-expanded="true" aria-controls="collapseOne">
+                <i class="fas fa-comment"></i>
+              </button>
             </div>
-
-            <!-- <div id="collapseOne" class="collapse show" aria-labelledby="headingOne" data-parent="#accordion">
-                <div class="card-body">
-                  <form class="form-group" @submit.prevent="createComment">
-                    <input class="form-control" type="text" placeholder="Enter Comment" v-model="state.newComment.body">
-                  </form>
-                </div>
-              </div> -->
           </div>
 
           <div class="col-3">
             <div id="headingTwo">
-              <h5 class="mb-0">
-                <button class="btn btn-link collapsed text-dark" data-toggle="collapse" data-target="#collapseTwo" aria-expanded="false" aria-controls="collapseTwo">
-                  <i class="fas fa-trash-alt" @click="deleteTask"></i>
-                </button>
-              </h5>
+              <button class="btn btn-link collapsed text-dark" data-toggle="collapse" data-target="#collapseTwo" aria-expanded="false" aria-controls="collapseTwo">
+                <i class="fas fa-trash-alt" @click="deleteTask"></i>
+              </button>
             </div>
           </div>
 
           <div class="col-3">
-            <div id="headingOne">
-              <h5 class="mb-0">
-                <button class="btn btn-link" data-toggle="collapse" data-target="#collapseOne" aria-expanded="true" aria-controls="collapseOne">
-                  <i class="fas fa-share"></i>
-                </button>
-              </h5>
+            <div id="headingThree">
+              <button class="btn btn-link" data-toggle="collapse" data-target="#collapseOne" aria-expanded="true" aria-controls="collapseOne">
+                <i class="fas fa-share"></i>
+              </button>
             </div>
 
-            <div id="collapseOne" class="collapse show" aria-labelledby="headingOne" data-parent="#accordion">
+            <div id="collapseOne" class="collapse show" aria-labelledby="headingThree" data-parent="#accordion">
               <div class="card-body">
               </div>
             </div>
