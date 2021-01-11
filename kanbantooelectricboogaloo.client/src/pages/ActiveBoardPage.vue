@@ -89,8 +89,8 @@ export default {
       lists: computed(() => AppState.activeBoardLists),
       comments: computed(() => AppState.comments),
       createList() {
-        // state.newList.boardId = route.params.boardId
         boardService.createList(state.newList)
+        state.newList.body = ''
       }
     }
   }

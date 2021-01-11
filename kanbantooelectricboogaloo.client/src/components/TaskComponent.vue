@@ -99,6 +99,7 @@ export default {
       lists: computed(() => AppState.activeBoardLists),
       createComment() {
         boardService.createComment(state.newComment)
+        state.newComment.body = ''
       },
       moveTask() {
         boardService.moveTask(state.selected, props.taskProp)
