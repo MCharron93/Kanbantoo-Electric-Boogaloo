@@ -31,6 +31,7 @@
             </div>
           </div>
 
+          <!-- NOTE Create drop down options for moving to different lists -->
           <div class="col-3">
             <div id="headingThree">
               <button class="btn btn-link" data-toggle="collapse" data-target="#collapse" aria-expanded="true" aria-controls="collapseOne">
