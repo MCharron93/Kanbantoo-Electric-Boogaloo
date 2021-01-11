@@ -1,5 +1,4 @@
 import { Auth0Provider } from '@bcwdev/auth0provider'
-// import { profilesService } from '../services/ProfilesService'
 import BaseController from '../utils/BaseController'
 import { boardsService } from '../services/BoardsService'
 import { listsService } from '../services/ListsService'
