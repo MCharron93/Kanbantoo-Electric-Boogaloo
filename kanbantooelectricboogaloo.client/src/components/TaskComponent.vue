@@ -46,8 +46,8 @@
           </div>
         </div>
       </div>
-      <div id="v-model-select" class="row justify-content-center">
-        <select @change.prevent="moveTask" v-model="state.selected">
+      <div id="v-model-select" class="row justify-content-center p-3">
+        <select @change.prevent="moveTask" v-model="state.selected" class="flex-grow">
           <option disabled value="">
             Move lists...
           </option>
@@ -59,7 +59,7 @@
       <div class="col-12">
         <!-- Comment Component -->
         <comment-component v-for="c in comments" :key="c" :comment-prop="c" />
-        <div id="collapseOne" class="collapse show" aria-labelledby="headingOne" data-parent="#accordion">
+        <div id="collapseOne p-2" class="collapse show" aria-labelledby="headingOne" data-parent="#accordion">
           <form class="form-group" @submit.prevent="createComment">
             <input class="form-control" type="text" placeholder="Enter Comment" v-model="state.newComment.body">
           </form>

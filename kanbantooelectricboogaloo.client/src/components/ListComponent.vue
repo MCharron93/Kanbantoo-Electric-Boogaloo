@@ -1,6 +1,6 @@
 <template>
   <div class="list-component col-2 pt-3 card radius20 shadow pb-2">
-    <div>
+    <div class="">
       <h2 class="d-flex justify-content-between">
         {{ listProp.body }}
         <i class="fas fa-ellipsis-h" @click="deleteList"></i>
