@@ -1,6 +1,6 @@
 <template>
   <div class="list-component col-2 pt-3 card radius20 shadow pb-2">
-    <div>
+    <div class="">
       <h2 class="d-flex justify-content-between">
         {{ listProp.body }}
         <i class="fas fa-ellipsis-h" @click="deleteList"></i>
@@ -13,7 +13,12 @@
       <button class="btn border-0 bg-transparent" type="submit">
         <i class="fas fa-plus"></i>
       </button>
-      <input class="border-0" type="text" name="task" placeholder="Add another task..." v-model="state.newTask.body">
+      <input class="border-0"
+             type="text"
+             name="task"
+             placeholder="Add another task..."
+             v-model="state.newTask.body"
+      >
     </form>
   </div>
 </template>
@@ -48,6 +53,7 @@ export default {
       tasks: computed(() => AppState.tasks[props.listProp._id]),
       addTask() {
         boardService.addTask(state.newTask)
+        state.newTask.body = ''
       },
       deleteList() {
         boardService.deleteList(props.listProp)

@@ -5,6 +5,7 @@ import helmet from 'helmet'
 import { RegisterControllers, Paths } from '../Setup'
 import { Auth0Provider } from '@bcwdev/auth0provider'
 import { logger } from './utils/Logger'
+// const domain = process.env.AUTH_DOMAIN
 
 export default class Startup {
   static ConfigureGlobalMiddleware(app) {
