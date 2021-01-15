@@ -1,21 +1,21 @@
 <template>
   <div class="activeboard-page container-fluid">
-    <div class="row">
-      <div class="col-12 jumbotron jumbotron-fluid text-center">
+    <div class="row pt-5">
+      <div class="col-12 jumbotron-fluid text-center">
         <div class="container">
-          <h3 class="display-4">
+          <h3 class="display-4 text-light">
             {{ activeBoard.title }}
           </h3>
-          <p class="lead">
+          <p class="lead text-light">
             Welcome to your board!
           </p>
-          <button type="button" class="btn btn-primary border-0 background-none" data-toggle="modal" data-target="#listModal">
-            Create List <i class="fas fa-list-alt fa-lg ml-2"></i>
+          <button type="button" class="btn border-0 background-none text-light rounded-pill" data-toggle="modal" data-target="#listModal">
+            Add a new list <i class="fas fa-plus ml-2"></i>
           </button>
         </div>
       </div>
     </div>
-    <div class="row justify-content-around">
+    <div class="row justify-content-around pt-3">
       <ListComponent v-for="l in lists" :key="l.body" :list-prop="l" />
     </div>
   </div>
@@ -98,5 +98,10 @@ export default {
 </script>
 
 <style lang="scss" scoped>
-
+.activeboard-page {
+  background: linear-gradient(#e66465, #9198e5);
+}
+// .jumbotron {
+//   background: linear-gradient(#C2CEE2, #F4F4FA);
+// }
 </style>
