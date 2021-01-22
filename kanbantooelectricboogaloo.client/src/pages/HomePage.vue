@@ -4,6 +4,9 @@
     <h1 class="my-5 bg-dark text-light p-3 rounded d-flex align-items-center" @click="toProfile()">
       <span class="mx-2 text-white">Welcome</span>
     </h1>
+    <p class="text-dark">
+      Click to continue to your boards!
+    </p>
   </div>
 </template>
 
@@ -31,5 +34,12 @@ export default {
     height: 200px;
     width: 200px;
   }
+}
+h1:hover{
+  border: 1px solid;
+  box-shadow: inset 0 0 20px rgba(255, 255, 255, .5), 0 0 20px rgba(255, 255, 255, .2);
+  outline-color: rgba(255, 255, 255, 0);
+  outline-offset: 15px;
+  text-shadow: 1px 1px 2px #427388;
 }
 </style>
