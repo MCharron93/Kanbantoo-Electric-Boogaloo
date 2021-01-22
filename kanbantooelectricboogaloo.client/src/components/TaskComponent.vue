@@ -37,7 +37,6 @@
           </div>
         </div>
 
-
         <div class="col-3">
           <div id="headingThree">
             <button class="btn btn-link" data-toggle="collapse" data-target="#collapseThree" aria-expanded="true" aria-controls="collapseOne">
@@ -51,7 +50,6 @@
           </div>
         </div>
       </div>
-
     </div>
     <div id="v-model-select" class="row justify-content-center">
       <select @change.prevent="moveTask" v-model="state.selected" id="collapsethree">
@@ -68,7 +66,6 @@
       <comment-component v-for="c in comments" :key="c" :comment-prop="c" />
       <div class="row justify-content-center text-center">
         <div id="collapseOne" class="collapse" aria-labelledby="headingOne" data-parent="#accordion">
-
           <form class="form-group" @submit.prevent="createComment">
             <input class="form-control border-0 text-center" type="text" placeholder="Enter Comment" v-model="state.newComment.body">
           </form>
