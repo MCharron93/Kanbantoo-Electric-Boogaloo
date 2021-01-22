@@ -1,5 +1,5 @@
 <template>
-  <div class="about text-center container-fluid">
+  <div class="profile text-center container-fluid">
     <div class="row justify-content-center p-3">
       <div class="card radius50 col-6 shadow">
         <h1 class="p-4">
@@ -100,5 +100,11 @@ export default {
 <style scoped>
 img {
   max-width: 100px;
+}
+.profile{
+  background: #FFF43C;
+  background-image: -webkit-radial-gradient(top, #FFF43C, #22A8D9);
+  background: -moz-radial-gradient(top, #FFF43C, #22A8D9);
+  background: radial-gradient(to bottom, #FFF43C, #22A8D9);
 }
 </style>

@@ -29,7 +29,7 @@ export default {
 .home{
   text-align: center;
   user-select: none;
-  background: radial-gradient(circle, rgba(238,174,202,1) 0%, rgba(148,187,233,1) 100%);
+  background: radial-gradient(circle, rgba(252,169,205,1) 0%, rgba(124,184,255,1) 100%);
   > img{
     height: 200px;
     width: 200px;
