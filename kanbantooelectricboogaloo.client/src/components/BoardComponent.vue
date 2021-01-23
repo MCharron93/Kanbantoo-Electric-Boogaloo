@@ -1,11 +1,11 @@
 <template>
-  <div class="board-component col-3 m-3 pt-3 card radius20 shadow text-center pb-1">
-    <div class="d-flex justify-content-between">
+  <div class="board-component col-sm-3 mt-3 card radius20 shadow">
+    <div class="row justify-content-between d-flex p-2">
       <router-link :to="{name: 'ActiveBoardPage', params: {boardId: boardProp._id}}">
         <h2>{{ boardProp.title }}</h2>
       </router-link>
       <button class="border-0 bg-transparent" @click="removeBoard">
-        <i class="fas fa-ellipsis-h fa-2x"></i>
+        <i class="fas fa-times fa-lg"></i>
       </button>
     </div>
   </div>
@@ -35,5 +35,8 @@ export default {
 </script>
 
 <style lang="scss" scoped>
-
+a {
+  color: #2f2f2f;
+  size: 12px;
+}
 </style>

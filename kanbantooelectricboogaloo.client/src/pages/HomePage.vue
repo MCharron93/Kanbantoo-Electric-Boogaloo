@@ -1,12 +1,14 @@
 <template>
   <div class="home flex-grow-1 d-flex flex-column align-items-center justify-content-center">
     <!-- <img src="https://bcw.blob.core.windows.net/public/img/8600856373152463" alt="CodeWorks Logo"> -->
-    <h1 class="my-5 bg-dark text-light p-3 rounded d-flex align-items-center" @click="toProfile()">
-      <span class="mx-2 text-white">Welcome</span>
-    </h1>
-    <p class="text-dark">
-      Click to continue to your boards!
-    </p>
+    <div class="hover-nav" @click="toProfile()">
+      <h1 class="display-4 text-light">
+        <span class="mx-2 text-white">Welcome!</span>
+      </h1>
+      <p class="text-light">
+        Click to continue to your boards!
+      </p>
+    </div>
   </div>
 </template>
 
@@ -35,8 +37,8 @@ export default {
     width: 200px;
   }
 }
-h1:hover{
-  border: 1px solid;
+.hover-nav:hover{
+  border-radius: 10px;
   box-shadow: inset 0 0 20px rgba(255, 255, 255, .5), 0 0 20px rgba(255, 255, 255, .2);
   outline-color: rgba(255, 255, 255, 0);
   outline-offset: 15px;

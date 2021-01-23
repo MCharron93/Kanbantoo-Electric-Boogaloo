@@ -89,8 +89,8 @@ export default {
       lists: computed(() => AppState.activeBoardLists),
       comments: computed(() => AppState.comments),
       createList() {
+        // state.newList.boardId = route.params.boardId
         boardService.createList(state.newList)
-        state.newList.body = ''
       }
     }
   }
@@ -101,7 +101,5 @@ export default {
 .activeboard-page {
   background: linear-gradient(#e66465, #9198e5);
 }
-// .jumbotron {
-//   background: linear-gradient(#C2CEE2, #F4F4FA);
-// }
+
 </style>

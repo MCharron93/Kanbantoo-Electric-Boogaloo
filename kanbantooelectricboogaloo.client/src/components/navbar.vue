@@ -1,7 +1,9 @@
 <template>
   <nav class="navbar navbar-expand-lg navbar-dark bg-dark">
     <router-link class="navbar-brand d-flex" :to="{ name: 'Home' }">
-      <h4><i class="far fa-list-alt mr-3"></i> Kanban 2 - Electric Boogaloo!</h4>
+      <h5>
+        <i class="far fa-list-alt mr-3"></i> Kanban 2 - Electric Boogaloo!
+      </h5>
     </router-link>
     <button
       class="navbar-toggler"
@@ -21,11 +23,11 @@
             Home
           </router-link>
         </li>
-        <li class="nav-item">
+        <!-- <li class="nav-item">
           <router-link :to="{ name: 'About' }" class="nav-link">
             About
           </router-link>
-        </li>
+        </li> -->
       </ul>
       <span class="navbar-text">
         <button
@@ -114,6 +116,7 @@ a:hover {
 }
 .nav-link{
   text-transform: uppercase;
+  font-size: 16px;
 }
 .nav-item .nav-link.router-link-exact-active{
   color: var(--primary);
