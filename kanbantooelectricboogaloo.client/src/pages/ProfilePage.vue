@@ -1,18 +1,18 @@
 <template>
   <div class="profile text-center container-fluid">
-    <div class="row justify-content-center p-3">
-      <div class="card radius50 col-6 shadow">
-        <h1 class="p-4">
-          Welcome {{ profile.name }}
-        </h1>
-        <div class="p-3">
-          <img class="rounded radius50" :src="profile.picture" alt="" />
-          <p class="p-2">
-            {{ profile.email }}
+    <div class="row justify-content-center text-center">
+      <div class="radius50 col-md-6">
+        <h2 class="display-4 text-light pt-3">
+          Welcome, {{ profile.name.split('@').splice(0,1).join('') }}!
+        </h2>
+        <div class="pt-3">
+          <img class="rounded-circle" :src="profile.picture" alt="" />
+          <p class="lead text-light pt-3">
+            {{ profile.email.split('@').splice(0,1).join('') }}
           </p>
-          <div class="p-3">
-            <button type="button" class="btn btn-primary border-0 background-none" data-toggle="modal" data-target="#boardModal">
-              Add a board
+          <div class="">
+            <button type="button" class="btn border-0 background-none text-light" data-toggle="modal" data-target="#boardModal">
+              Add a board <i class="fas fa-plus ml-2"></i>
             </button>
           </div>
         </div>
@@ -38,23 +38,27 @@
           </div>
           <div class="modal-body">
             <form @submit.prevent="createBoard" action="">
-              <div class="col-8 offset-2 my-2">
-                <input type="text" placeholder="Board Title" class="form-control" v-model="state.newBoard.title">
-              </div>
-              <div class="modal-footer">
-                <button type="button" class="btn btn-secondary" data-dismiss="modal">
-                  Close
-                </button>
-                <button type="submit" class="btn btn-primary">
-                  Create Board
-                </button>
+              <div class="row justify-content-center">
+                <div class="col-md-10 my-2">
+                  <input type="text" placeholder="Board Title" class="form-control" v-model="state.newBoard.title">
+                </div>
+                <div class="col">
+                  <div class="modal-footer">
+                    <button type="button" class="btn border-0" data-dismiss="modal">
+                      Close
+                    </button>
+                    <button type="submit" class="btn border-0">
+                      Create Board
+                    </button>
+                  </div>
+                </div>
               </div>
             </form>
           </div>
         </div>
       </div>
     </div>
-    <div class="row p-5 justify-content-between flex-wrap text-center">
+    <div class="row justify-content-between ml-2 mr-2">
       <board-component v-for="b in boards" :key="b.title" :board-prop="b" />
     </div>
   </div>
@@ -102,9 +106,6 @@ img {
   max-width: 100px;
 }
 .profile{
-  background: #FFF43C;
-  background-image: -webkit-radial-gradient(top, #FFF43C, #22A8D9);
-  background: -moz-radial-gradient(top, #FFF43C, #22A8D9);
-  background: radial-gradient(to bottom, #FFF43C, #22A8D9);
+  background: linear-gradient( #22A8D9, #FFF43C);
 }
 </style>

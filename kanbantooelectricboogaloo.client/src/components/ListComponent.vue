@@ -1,5 +1,5 @@
 <template>
-  <div class="list-component col-2 pt-3 card radius20 shadow pb-2">
+  <div class="list-component col-md-2 pt-3 card radius20 shadow pb-2 my-2 ml-3 mr-3">
     <div class="">
       <h2 class="d-flex justify-content-between">
         {{ listProp.body }}
@@ -16,7 +16,7 @@
       <input class="border-0"
              type="text"
              name="task"
-             placeholder="Add another task..."
+             placeholder="Add a task..."
              v-model="state.newTask.body"
       >
     </form>
