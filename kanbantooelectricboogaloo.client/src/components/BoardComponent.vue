@@ -39,4 +39,7 @@ a {
   color: #2f2f2f;
   size: 12px;
 }
+a:hover{
+color: rgba(5, 228, 105, 0.925);
+}
 </style>
