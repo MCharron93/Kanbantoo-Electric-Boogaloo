@@ -90,6 +90,7 @@ export default {
       boards: computed(() => AppState.boards),
       createBoard() {
         boardService.createBoard(state.newBoard)
+        state.newBoard.content = ''
         $('#boardModal').modal('toggle')
       },
       showActiveBoard(id) {
