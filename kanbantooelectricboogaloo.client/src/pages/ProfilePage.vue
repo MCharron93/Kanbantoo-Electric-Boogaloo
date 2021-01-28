@@ -45,10 +45,10 @@
                 <div class="col">
                   <div class="modal-footer">
                     <button type="button" class="btn border-0" data-dismiss="modal">
-                      Close
+                      Close    <i class="fas fa-window-close fa-lg ml-2"></i>
                     </button>
                     <button type="submit" class="btn border-0">
-                      Create Board
+                      Create Board <i class="fas fa-clipboard-list fa-lg ml-2"></i>
                     </button>
                   </div>
                 </div>
