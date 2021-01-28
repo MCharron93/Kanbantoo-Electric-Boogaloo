@@ -71,6 +71,7 @@ import { boardService } from '../services/BoardService'
 import BoardComponent from '../components/BoardComponent'
 import router from '../router'
 import { profileService } from '../services/ProfileService'
+import $ from 'jquery'
 
 export default {
   name: 'Profile',
@@ -89,11 +90,10 @@ export default {
       boards: computed(() => AppState.boards),
       createBoard() {
         boardService.createBoard(state.newBoard)
-        console.log(state.newBoard.title)
+        $('#boardModal').modal('toggle')
       },
       showActiveBoard(id) {
         boardService.showActiveBoard(id)
-        // console.log('trying to show board')
         router.push({ name: 'ActiveBoardPage', params: { boardId: id } })
       }
     }
