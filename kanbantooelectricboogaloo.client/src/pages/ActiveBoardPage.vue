@@ -91,7 +91,7 @@ export default {
       createList() {
         boardService.createList(state.newList)
         state.newList.body = ''
-        $('#listModal').modal('hide')
+        $('#listModal').modal('toggle')
       }
     }
   }
