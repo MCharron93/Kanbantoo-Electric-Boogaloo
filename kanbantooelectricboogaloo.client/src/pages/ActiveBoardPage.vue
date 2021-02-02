@@ -92,6 +92,7 @@ export default {
         boardService.createList(state.newList)
         state.newList.body = ''
         $('#listModal').modal('toggle')
+        $('.modal-backdrop').remove()
       }
     }
   }
