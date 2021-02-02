@@ -92,6 +92,7 @@ export default {
         boardService.createBoard(state.newBoard)
         state.newBoard.content = ''
         $('#boardModal').modal('toggle')
+        $('.modal-backdrop').remove()
       },
       showActiveBoard(id) {
         boardService.showActiveBoard(id)
