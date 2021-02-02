@@ -45,10 +45,10 @@
                 <div class="col">
                   <div class="modal-footer">
                     <button type="button" class="btn border-0" data-dismiss="modal">
-                      Close
+                      Close    <i class="fas fa-window-close fa-lg ml-2"></i>
                     </button>
                     <button type="submit" class="btn border-0">
-                      Create Board
+                      Create Board <i class="fas fa-clipboard-list fa-lg ml-2"></i>
                     </button>
                   </div>
                 </div>
@@ -71,6 +71,7 @@ import { boardService } from '../services/BoardService'
 import BoardComponent from '../components/BoardComponent'
 import router from '../router'
 import { profileService } from '../services/ProfileService'
+import $ from 'jquery'
 
 export default {
   name: 'Profile',
@@ -89,11 +90,12 @@ export default {
       boards: computed(() => AppState.boards),
       createBoard() {
         boardService.createBoard(state.newBoard)
-        console.log(state.newBoard.title)
+        state.newBoard.title = ''
+        $('#boardModal').modal('toggle')
+        $('.modal-backdrop').remove()
       },
       showActiveBoard(id) {
         boardService.showActiveBoard(id)
-        // console.log('trying to show board')
         router.push({ name: 'ActiveBoardPage', params: { boardId: id } })
       }
     }

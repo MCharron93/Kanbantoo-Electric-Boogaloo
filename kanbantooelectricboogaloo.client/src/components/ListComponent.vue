@@ -28,8 +28,6 @@ import { AppState } from '../AppState'
 import { computed, onMounted, reactive } from 'vue'
 import { boardService } from '../services/BoardService'
 import { TaskComponent } from '../components/TaskComponent'
-// import { useRoute } from 'vue-router'
-
 export default {
   name: 'ListComponent',
   props: {

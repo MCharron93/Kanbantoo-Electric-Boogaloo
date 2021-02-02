@@ -63,7 +63,7 @@ import { AppState } from '../AppState'
 import { boardService } from '../services/BoardService'
 import { useRoute } from 'vue-router'
 import ListComponent from '../components/ListComponent'
-
+import $ from 'jquery'
 export default {
   name: 'ActiveBoardPage',
   components: { ListComponent },
@@ -89,8 +89,10 @@ export default {
       lists: computed(() => AppState.activeBoardLists),
       comments: computed(() => AppState.comments),
       createList() {
-        // state.newList.boardId = route.params.boardId
         boardService.createList(state.newList)
+        state.newList.body = ''
+        $('#listModal').modal('toggle')
+        $('.modal-backdrop').remove()
       }
     }
   }
