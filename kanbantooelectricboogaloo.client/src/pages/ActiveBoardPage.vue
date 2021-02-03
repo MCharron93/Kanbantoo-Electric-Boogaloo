@@ -81,6 +81,7 @@ export default {
       await boardService.getBoards()
       await boardService.showActiveBoard(route.params.boardId)
       await boardService.getLists(route.params.boardId)
+      AppState.navColor = '#e66465!important'
     })
 
     return {
@@ -100,6 +101,10 @@ export default {
 <style lang="scss" scoped>
 .activeboard-page {
   background: linear-gradient(#e66465, #9198e5);
+}
+
+nav {
+  background-color: #e66465!important;
 }
 
 </style>

@@ -68,7 +68,7 @@
     </div>
   </nav> -->
 
-  <nav class="navbar navbar-expand-lg navbar-light fixed-top pb-5">
+  <nav class="navbar navbar-expand-lg navbar-light bg-dark">
     <div class="container-fluid">
       <router-link class="navbar-brand d-flex" :to="{ name: 'Home' }">
         <h5 class="text-light lead my-1">
@@ -189,4 +189,7 @@ a:hover {
 .list-group-item {
   background: transparent;
 }
+/* nav {
+  background-color: #22A8D9!important;
+} */
 </style>

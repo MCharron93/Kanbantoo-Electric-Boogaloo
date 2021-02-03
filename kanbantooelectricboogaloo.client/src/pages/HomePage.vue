@@ -13,11 +13,16 @@
 </template>
 
 <script>
+import { onMounted } from 'vue'
 import { useRouter } from 'vue-router'
+import { AppState } from '../AppState'
 export default {
   name: 'Home',
   setup() {
     const router = useRouter()
+    onMounted(() => {
+      AppState.navColor = '#7cb8ff!important'
+    })
     return {
       toProfile() {
         router.push('Profile')
