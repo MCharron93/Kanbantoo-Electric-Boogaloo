@@ -1,6 +1,6 @@
 <template>
   <header>
-    <Navbar :style="'background-color:'+NavColor+''" />
+    <Navbar :style="'background-color:'+navColor+''" />
   </header>
   <main>
     <router-view v-slot="{Component}">
@@ -20,7 +20,7 @@ export default {
   setup() {
     return {
       appState: computed(() => AppState),
-      NavColor: computed(() => AppState.navColor)
+      navColor: computed(() => AppState.navColor)
     }
   }
 }

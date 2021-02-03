@@ -82,7 +82,7 @@ export default {
     onMounted(() => {
       profileService.getProfile()
       boardService.getBoards()
-      AppState.navColor = '#22A8D9!important'
+      AppState.navColor = '#22A8D9'
     })
     return {
       state,
@@ -94,7 +94,6 @@ export default {
       },
       showActiveBoard(id) {
         boardService.showActiveBoard(id)
-        // console.log('trying to show board')
         router.push({ name: 'ActiveBoardPage', params: { boardId: id } })
       }
     }
