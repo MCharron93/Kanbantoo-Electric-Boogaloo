@@ -78,6 +78,7 @@ export default {
       }
     })
     onMounted(async() => {
+      AppState.navColor = '#e66465'
       await boardService.getBoards()
       await boardService.showActiveBoard(route.params.boardId)
       await boardService.getLists(route.params.boardId)

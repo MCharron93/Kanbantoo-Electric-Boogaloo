@@ -83,6 +83,7 @@ export default {
     onMounted(() => {
       profileService.getProfile()
       boardService.getBoards()
+      AppState.navColor = '#22A8D9'
     })
     return {
       state,

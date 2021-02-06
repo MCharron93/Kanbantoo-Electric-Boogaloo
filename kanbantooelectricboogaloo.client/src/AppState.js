@@ -8,5 +8,6 @@ export const AppState = reactive({
   activeBoard: {},
   activeBoardLists: [],
   tasks: {},
-  comments: {}
+  comments: {},
+  navColor: null
 })

@@ -1,6 +1,5 @@
 <template>
   <div class="home flex-grow-1 d-flex flex-column align-items-center justify-content-center">
-    <!-- <img src="https://bcw.blob.core.windows.net/public/img/8600856373152463" alt="CodeWorks Logo"> -->
     <div class="hover-nav" @click="toProfile()">
       <h1 class="display-4 text-light">
         <span class="mx-2 text-white">Welcome!</span>
@@ -13,11 +12,16 @@
 </template>
 
 <script>
+import { onMounted } from 'vue'
 import { useRouter } from 'vue-router'
+import { AppState } from '../AppState'
 export default {
   name: 'Home',
   setup() {
     const router = useRouter()
+    onMounted(() => {
+      AppState.navColor = '#7cb8ff'
+    })
     return {
       toProfile() {
         router.push('Profile')
@@ -31,11 +35,8 @@ export default {
 .home{
   text-align: center;
   user-select: none;
-  background: radial-gradient(circle, rgba(252,169,205,1) 0%, rgba(124,184,255,1) 100%);
-  > img{
-    height: 200px;
-    width: 200px;
-  }
+  background: linear-gradient(rgba(124,184,255,1) ,rgba(252,169,205,1));
+
 }
 .hover-nav:hover{
   border-radius: 10px;
