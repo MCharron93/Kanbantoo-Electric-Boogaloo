@@ -3,7 +3,9 @@
     <div class="">
       <h2 class="d-flex justify-content-between">
         {{ listProp.body }}
-        <i class="fas fa-ellipsis-h" @click="deleteList"></i>
+        <button class="border-0 bg-transparent" @click="removeBoard">
+          <i class="fas fa-times fa-lg"></i>
+        </button>
       </h2>
       <!-- TASK COMPONENT FOR DRAWING TASKS -->
       <task-component v-for="t in tasks" :key="t" :task-prop="t" />
