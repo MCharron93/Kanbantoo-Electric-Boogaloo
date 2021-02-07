@@ -3,7 +3,7 @@
     <div class="">
       <h2 class="d-flex justify-content-between">
         {{ listProp.body }}
-        <button class="border-0 bg-transparent" @click="removeBoard">
+        <button class="border-0 bg-transparent" @click="deleteList">
           <i class="fas fa-times fa-lg"></i>
         </button>
       </h2>
